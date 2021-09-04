@@ -1,0 +1,32 @@
+body{
+    background: rgb(51,208,15);
+    background: linear-gradient(90deg, rgba(51,208,15,0.4290091036414566) 0%, rgba(235,6,49,0.6166841736694677) 35%, rgba(255,184,0,1) 100%);
+}
+
+a{
+    color: yellow;
+}
+
+div{
+    color:tan;
+}
+
+center{
+    color: black;
+}
+
+.names{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 80%;
+    border:5px solid lightyellow;
+    background-color: lightsteelblue;
+    color:black;
+}
+.names div{
+    color:red;
+}
+
+.app{
+    color:blue;
+}

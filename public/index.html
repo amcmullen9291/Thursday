@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="style.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <div class="names">{{intro}}
+    <div v-for="num in 5">
+      {{ num }}
+    </div>
+    <div v-for="(name) in GUYS_NAMES">
+      {{ name }}
+    </div>
+
+    </div>
     <div class="app">{{ msg }}, {{ msg2 }} {{NUMBER_ONE}}
     </div>
     <h1 class="positioning">{{wordVar}}, but...  {{app.msg}} {{app.msg2}}</h1>
@@ -70,7 +80,7 @@
           msg3: variable.me
         },
         created () {
-    this.NUMBER_ONE = NumberOne; //is binded to the already declared constant
+    this.NUMBER_ONE = "("+NumberOne+" is a concatenated string.)"; //is binded to the already declared constant
 }
       })
       var app2 = new Vue ({
@@ -103,6 +113,21 @@
         }
       });
       
+      </script>
+      <script>
+        const guysNames = ["Thomas", "James", "Simon", "Henry", "Peter"];
+        const index = 1;
+        const nameList = new Vue ({
+          el: '.names',
+          data: {
+            intro: "This is my names loop."
+          },
+          created () {
+    this.GUYS_NAMES = guysNames; //is binded to the already declared constant
+    this.INDEX = index;
+}
+
+        })
       </script>
 
     <!-- built files will be auto injected -->
