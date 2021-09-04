@@ -12,7 +12,8 @@
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div class="app">{{ msg }}, {{ msg2 }}</div>
+    <div class="app">{{ msg }}, {{ msg2 }} {{NUMBER_ONE}}
+    </div>
     <h1 class="positioning">{{wordVar}}, but...  {{app.msg}} {{app.msg2}}</h1>
 <br/>
 <hr/><hr/>
@@ -20,7 +21,7 @@
   <span v-bind:id="floatingID">{{app.msg3}}
   </span>
 </div>
-<a id="middle" v-bind:href='link.href' :alt='link.alt'>{{link.text}}</a>
+<a class="middle" v-bind:href='link.href' :alt='link.alt'>{{link.text}}</a><br/>
 <div id="apped">
   <h1>Data Binding: Expressions</h1>
   <p>{{msg}}</p>
@@ -59,6 +60,7 @@
         age: "Rocks!",
         me: "Anthony's project"
       };
+      const NumberOne = 1554;
 
       var app = new Vue({
         el: '.app',  //querySelect for classes
@@ -66,9 +68,12 @@
           msg: variable.name,
           msg2: variable.age,
           msg3: variable.me
-        }
+        },
+        created () {
+    this.NUMBER_ONE = NumberOne; //is binded to the already declared constant
+}
       })
-
+(63)
       var app2 = new Vue ({
         el: '.positioning',
         data: {
@@ -84,8 +89,8 @@
       })
     </script>
      <script>
-      const link = new Vue({
-        el: '#middle',
+      const number = new Vue({
+        el: '.middle',
         data: {
           link: {
             text: 'Vue.js',
@@ -98,7 +103,8 @@
           post: 'This is my <strong>awesome</strong> blog post'
         }
       });
-    </script>
+      
+      </script>
 
     <!-- built files will be auto injected -->
   </body>
