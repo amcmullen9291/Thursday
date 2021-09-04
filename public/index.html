@@ -15,9 +15,10 @@
     </noscript>
     <div class="names">{{intro}}
     <div v-for="num in 5">
-      {{ num }}
+      '{{ num }}, one hundered...',
     </div>
-    <div v-for="(name) in GUYS_NAMES">
+    <hr/>
+    <div v-for="(name) in MONTH_NAMES">
       {{ name }}
     </div>
 
@@ -115,15 +116,15 @@
       
       </script>
       <script>
-        const guysNames = ["Thomas", "James", "Simon", "Henry", "Peter"];
+        const monthNames = ["1. September", "2. October", "3. November", "4. Decemeber", "5. January"];
         const index = 1;
         const nameList = new Vue ({
           el: '.names',
           data: {
-            intro: "This is my names loop."
+            intro: "These are my Vue loops."
           },
           created () {
-    this.GUYS_NAMES = guysNames; //is binded to the already declared constant
+    this.MONTH_NAMES = monthNames; //is binded to the already declared constant
     this.INDEX = index;
 }
 

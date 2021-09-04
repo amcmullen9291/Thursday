@@ -25,6 +25,8 @@ center{
 }
 .names div{
     color:red;
+    padding: 1px;
+    margin-left: 2%;
 }
 
 .app{
