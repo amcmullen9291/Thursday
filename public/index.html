@@ -13,17 +13,69 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div class="app">{{ msg }}, {{ msg2 }}</div>
+    <h1 class="positioning">{{wordVar}}, but...  {{app.msg}} {{app.msg2}}</h1>
+<br/>
+<hr/><hr/>
+<div class="app3">
+  <span v-bind:id="floatingID">{{app.msg3}}
+  </span>
+</div>
+<div id="apped">
+  <h1>Data Binding: Expressions</h1>
+  <p>{{msg}}</p>
+  <center><h1>count: </h1>{{count + 1}}</center>
+  <div>and...</div>
+  <h3>{{greeting + " " +2021 + "!"}}</h3>
+  <hr/>
+  <h4>{{greeting.split("").reverse().join("")}}</h4>
+  <div>in stock: {{product.inStock ? 'YES' : 'NO' }}</div>
 
+</div>
+<script>
+  const vm = new Vue({
+    el: '#apped', //querySelect for IDs
+    data: {
+      msg: 'Hello, Vue!',
+      count: 100,
+      greeting: 'Hello',
+      product: {
+        inStock: true
+      }
+    },
+    methods: {
+      getNewMessage() {
+        return "This is my new message"; // just call the method in the mustache template
+      }
+    }
+  });
+</script>
     <script>
       const variable = {
         name: "Vue",
-        age: "Rocks!"
+        age: "Rocks!",
+        me: "Anthony's project"
       };
-      new Vue({
-        el: '.app',
+
+      var app = new Vue({
+        el: '.app',  //querySelect for classes
         data: {
           msg: variable.name,
-          msg2: variable.age
+          msg2: variable.age,
+          msg3: variable.me
+        }
+      })
+
+      var app2 = new Vue ({
+        el: '.positioning',
+        data: {
+          wordVar: "words are arbitrary"
+        }
+      })
+
+      var app3 = new Vue ({
+        el: '.app3',
+        data:{
+          floatingID: 'taco' + new Date().toLocaleString()
         }
       })
     </script>
