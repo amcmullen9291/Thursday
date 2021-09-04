@@ -29,7 +29,9 @@
   <hr/>
   <h4>{{greeting.split("").reverse().join("")}}</h4>
   <div>in stock: {{product.inStock ? 'YES' : 'NO' }}</div>
-
+  <!-- directive -->
+  <div v-if="product.inStock === false"> more coming shortly!</div> 
+        <!-- //vm.product.inStock -->
 </div>
 <script>
   const vm = new Vue({
