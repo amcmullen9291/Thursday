@@ -32,3 +32,15 @@ center{
 .app{
     color:blue;
 }
+
+#friendsList{
+    height: 175px;
+    width: 225px;
+    overflow-y: auto;
+    border:5px solid lightyellow;
+    background-color: lightsteelblue;
+    color:black;
+    position: absolute;
+    margin-top: 6%;
+
+}
